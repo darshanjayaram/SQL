@@ -1,0 +1,45 @@
+CREATE TABLE Customers (
+  CustomerID INT,
+  CustomerName VARCHAR(100),
+  Country VARCHAR(50)
+);
+
+CREATE TABLE orders (
+  OrderId INT,
+  CustomerID INT,
+  Product VARCHAR(100)
+);
+
+INSERT INTO Customers(CustomerID, customerName, country)
+VALUES
+(1, "Ram", "USA"),
+(2, "venkat", "USA"),
+(3, "Darshan", "India");
+
+INSERT INTO orders(OrderId, CustomerID, Product)
+VALUES
+(101, 1, "Laptop"),
+(102, 1, "Mouse"),
+(103, 2, "Keyboard"),
+(103, 4, "Monitor");
+
+/* SELECT Customers.customerName, Customers.country, orders.Product
+FROM Customers
+RIGHT JOIN
+orders
+ON
+Customers.CustomerID = orders.CustomerID */
+
+SELECT Customers.customerName, Customers.country, orders.Product
+FROM Customers
+LEFT JOIN orders
+ON
+Customers.CustomerID = orders.CustomerID
+
+UNION
+
+SELECT Customers.customerName, Customers.country, orders.Product
+FROM Customers
+RIGHT JOIN orders
+ON
+Customers.CustomerID = orders.CustomerID

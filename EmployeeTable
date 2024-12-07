@@ -1,0 +1,33 @@
+CREATE TABLE Employees (
+  EmployeeID INT AUTO_INCREMENT PRIMARY KEY,
+  FirstName VARCHAR(50),
+  LastName VARCHAR(50),
+  Email VARCHAR(100),
+  HireDate Date
+);
+
+INSERT INTO Employees(FirstName, LastName, Email, HireDate) 
+VALUES 
+('darshan', "s j", "d@gmail.com", "2024-11-30"),
+('ram', "s j", "d@gmail.com", "2024-11-30"),
+('jack', "s j", "d@gmail.com", "2024-11-30"),
+('joe', "s j", "d@gmail.com", "2024-11-30");
+
+SELECT * FROM Employees;
+
+UPDATE Employees SET Email = "Darshansj.darshu@gmail.com" WHERE EmployeeID = 1;
+
+SELECT * FROM Employees;
+
+UPDATE Employees SET Email = "Darshansj.darshu@gmail.com" WHERE EmployeeID = 2;
+
+ALTER TABLE Employees ADD COLUMN Department VARCHAR(50);
+SELECT * FROM Employees;
+INSERT INTO Employees(FirstName, LastName, Email, HireDate, Department) 
+VALUES 
+('darshan', "s j", "d@gmail.com", "2024-11-30", "Engg"),
+('ram', "s j", "d@gmail.com", "2024-11-30", "AI"),
+('jack', "s j", "d@gmail.com", "2024-11-30", "CSE"),
+('joe', "s j", "d@gmail.com", "2024-11-30", "ECE");
+
+SELECT * FROM Employees;
